@@ -1,6 +1,6 @@
 'use strict';
 const api = typeof browser !== 'undefined' ? browser : chrome;
-const ENGINE_FILE = 'engine/stockfish.js';
+const ENGINE_FILE = 'engine/stockfish-19-asm.js';
 
 let worker = null;
 let readyPromise = null;
