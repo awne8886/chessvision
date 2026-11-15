@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "ChessVision",
+  "version": "1.0.0",
+  "description": "Auto-plays chess against bots using a local Stockfish engine.",
+  "browser_specific_settings": {
+    "gecko": { "id": "chessvision@awne8886" }
+  },
+  "permissions": ["storage", "*://*.chess.com/*"],
+  "background": { "scripts": ["background.js"] },
+  "content_scripts": [
+    {
+      "matches": ["*://*.chess.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_action": {
+    "default_title": "ChessVision",
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": "script-src 'self' 'wasm-unsafe-eval' 'unsafe-eval'; object-src 'self'"
+}
